@@ -1,7 +1,9 @@
 {
-  "name": "silver-chromosphere",
+  "name": "nexus-ops-dashboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "My first DevOps monitoring project. Learning React and infrastructure visualization.",
+  "author": "Syed Irtiza",
   "type": "module",
   "scripts": {
     "dev": "vite",

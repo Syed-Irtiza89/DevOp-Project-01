@@ -30,22 +30,24 @@ const Sidebar = () => (
       </div>
       <div>
         <h1 style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.5px' }}>NEXUS<span style={{ color: 'var(--primary)' }}>OPS</span></h1>
-        <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 500 }}>V.2.4.0 • Enterprise</p>
+        <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 500 }}>Dashboard v1.0 - Local Dev</p>
       </div>
     </div>
 
+    {/* Sidebar navigation starts here */}
     <nav style={{ flex: 1, marginTop: '20px' }}>
-      <p style={{ padding: '0 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>General</p>
-      <a href="#" className="nav-link active"><LayoutDashboard size={20} /> Dashboard</a>
+      <p style={{ padding: '0 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>Quick Access</p>
+      <a href="#" className="nav-link active"><LayoutDashboard size={20} /> Home</a>
       <a href="#" className="nav-link"><Activity size={20} /> Monitoring</a>
-      <a href="#" className="nav-link"><Terminal size={20} /> CI/CD Pipelines</a>
+      <a href="#" className="nav-link"><Terminal size={20} /> Deployment Hub</a>
       <a href="#" className="nav-link"><Database size={20} /> Infrastructure</a>
 
-      <p style={{ padding: '30px 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>Security</p>
+      {/* Security related stuff */}
+      <p style={{ padding: '30px 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>System Safety</p>
       <a href="#" className="nav-link"><ShieldCheck size={20} /> Vulnerabilities</a>
-      <a href="#" className="nav-link"><Bell size={20} /> Incident Alerts</a>
+      <a href="#" className="nav-link"><Bell size={20} /> Incident Alerts Status</a>
 
-      <p style={{ padding: '30px 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>System</p>
+      <p style={{ padding: '30px 24px 10px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>Other</p>
       <a href="#" className="nav-link"><Settings size={20} /> Settings</a>
     </nav>
 
@@ -188,6 +190,7 @@ const PipelineItem = ({ name, env, status, duration, time, onClick }) => {
 // --- Terminal Component ---
 
 const TerminalLogs = ({ activePipeline }) => {
+  // Initial state for logs - added some dummy data to make it look full at start
   const [logs, setLogs] = useState([
     "[INFO] Initializing worker node 08-B...",
     "[INFO] Fetching latest commit 4f2a1...",
@@ -195,8 +198,11 @@ const TerminalLogs = ({ activePipeline }) => {
   ]);
 
   useEffect(() => {
+    // If no pipeline is selected, don't do anything
     if (!activePipeline) return;
 
+    // Clear logs or show a divider when switching pipelines?
+    // Let's just add a message for now.
     setLogs(prev => [...prev, `[SYSTEM] Intercepting logs for ${activePipeline}...`]);
 
     const messages = [
@@ -509,11 +515,17 @@ const Dashboard = () => {
 };
 
 
+// Main App Export - Entry point for the whole thing
 export default function App() {
   return (
     <div className="app-container">
+      {/* Sidebar on the left */}
       <Sidebar />
+
+      {/* Everything else on the right */}
       <Dashboard />
+
+      {/* TODO: Add a footer or a feedback button here? */}
     </div>
   );
 }
