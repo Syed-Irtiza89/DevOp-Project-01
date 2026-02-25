@@ -101,6 +101,9 @@ const Header = () => (
     </div>
 
     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+      <div style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--primary)', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 700, border: '1px solid var(--primary-glow)' }}>
+        DEMO MODE
+      </div>
       <button style={{ background: 'var(--primary)', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '10px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
         <Plus size={18} /> New Deployment
       </button>

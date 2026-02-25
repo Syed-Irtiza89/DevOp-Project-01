@@ -1,6 +1,6 @@
-# 🚀 Nexus Ops - My DevOps Dashboard Project
+# 🚀 Nexus Ops - Frontend DevOps Dashboard Demo
 
-Welcome to my personal project! I built **Nexus Ops** because I wanted to learn how to visualize complex infrastructure data using React. It's a dashboard that simulates what a real-life Cloud/Platform Engineer might use to monitor clusters and deployments.
+Welcome to my personal project! I built **Nexus Ops** as a **UI/UX demonstration** to show how a modern DevOps dashboard could look and feel. **Note: This is a front-end demo meant for portfolio display; it uses simulated data and mock terminal logs.**
 
 ## 🧐 Why I built this
 I've been learning about DevOps and I realized that most production tools (like Prometheus or Datadog) can be really overwhelming for beginners. I wanted to see if I could build a cleaner, more "modern" looking interface that highlights only the most important metrics.
